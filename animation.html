@@ -1,9 +1,22 @@
+<section></section>
 
-	<p id="title" data-splitting>Веб сайты без головной боли</p>
+<p id="title" data-splitting>Веб сайты без головной боли</p>
 
 	<p id="title" data-splitting>Диджитализация</p>
 
 <p id="paragraph" data-splitting>Lorem ipsum dolor sit amet consectetur adipisicing elit. In eaque quae ipsa neque error! Fugiat nobis nemo enim id explicabo laboriosam atque expedita earum ratione.</p>
+
+
+<a href="#" id="obj" class="obj">Contacts</a>
+
+
+
+<section></section>
+
+
+
+
+
 
 
 #title .char {
@@ -40,54 +53,102 @@
 }
 
 
+.obj {
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid red;
+  line-height: 100px;
+  text-align: center;
+}
+
+
+
+section {
+  display: flex;
+  height: 120vh;
+  width: 100vw;
+  background-color: blue;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
 
 
 Splitting();
 
+// Получил массив для заголовков
 var title = gsap.utils.toArray(document.querySelectorAll('#title .word > .char'));
+
+// Получил массив для основного текста
 var paragraph = gsap.utils.toArray(document.querySelectorAll('#paragraph .word > .char')); 
+
+// Получил массив для объектов
+var obj = gsap.utils.toArray(document.querySelectorAll('#obj')); 
+
+
+// Переменные тайминга
 const timelineSettings = {
     staggerValue: 0.012,
-    charsDuration: 0.75
+    charsDuration: 0.35
 };
 
 
-var tl = gsap.timeline({repeat: -1})
-.addLabel('titleLabel', 0)
+var tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: title,
+      start: "top center", 
+    }
+})
+
+// Анимация заголовков
   .from( title, {
     y:'100%',
     stagger: timelineSettings.staggerValue,
     opacity: 0,
-     ease: 'Power3.easeOut'
+    ease: 'Power3.easeOut'
   })
   .to( title, {
     y:0,
     stagger: timelineSettings.staggerValue,
     opacity: 1,
-  }, timelineSettings.charsDuration, title)
-.addLabel('text', 2)
-  .from( paragraph, {
+  }, timelineSettings.charsDuration)
+
+// Анимация основного текста
+.from( paragraph, {
     y:'100%',
-    stagger: 0.0025,
+    stagger: {
+      each: 0.002,
+    },
     opacity: 0,
     ease: 'Power3.easeOut'
   })
   .to( paragraph, {
     y:0,
-    stagger: 0.0025,
+    stagger: {
+      each: 0.002,
+    },
     opacity: 1,
-  }, timelineSettings.charsDuration, text)
+  }, "+=.1")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// Анимация объектов
+.from( obj, {
+  y:"100%",
+  opacity: 0,
+  ease: 'Power3.easeOut'
+}, "-=1.5")
+.to ( obj , {
+  y: 0,
+  opacity: 1,
+  ease: 'Power3.easeOut'
+})
