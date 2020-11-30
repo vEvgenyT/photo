@@ -1,0 +1,93 @@
+
+	<p id="title" data-splitting>Веб сайты без головной боли</p>
+
+	<p id="title" data-splitting>Диджитализация</p>
+
+<p id="paragraph" data-splitting>Lorem ipsum dolor sit amet consectetur adipisicing elit. In eaque quae ipsa neque error! Fugiat nobis nemo enim id explicabo laboriosam atque expedita earum ratione.</p>
+
+
+#title .char {
+/*   height: 100px; */
+  display: inline-block;
+  width: auto;
+/*   background-color: red; */
+}
+
+#title {
+  overflow: hidden;
+  height: auto;
+}
+
+
+#paragraph .char {
+/*   height: 100px; */
+  display: inline-block;
+  width: auto;
+/*   background-color: red; */
+}
+
+#paragraph {
+  overflow: hidden;
+  height: auto;
+}
+
+
+.text {
+  width: 180px;
+/*   height: 400px; */
+  display: block;
+  word-wrap: break-word;
+}
+
+
+
+
+Splitting();
+
+var title = gsap.utils.toArray(document.querySelectorAll('#title .word > .char'));
+var paragraph = gsap.utils.toArray(document.querySelectorAll('#paragraph .word > .char')); 
+const timelineSettings = {
+    staggerValue: 0.012,
+    charsDuration: 0.75
+};
+
+
+var tl = gsap.timeline({repeat: -1})
+.addLabel('titleLabel', 0)
+  .from( title, {
+    y:'100%',
+    stagger: timelineSettings.staggerValue,
+    opacity: 0,
+     ease: 'Power3.easeOut'
+  })
+  .to( title, {
+    y:0,
+    stagger: timelineSettings.staggerValue,
+    opacity: 1,
+  }, timelineSettings.charsDuration, title)
+.addLabel('text', 2)
+  .from( paragraph, {
+    y:'100%',
+    stagger: 0.0025,
+    opacity: 0,
+    ease: 'Power3.easeOut'
+  })
+  .to( paragraph, {
+    y:0,
+    stagger: 0.0025,
+    opacity: 1,
+  }, timelineSettings.charsDuration, text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
