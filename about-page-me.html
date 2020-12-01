@@ -242,3 +242,154 @@ let tl = gsap.timeline({
   opacity: 1,
 })
 
+
+
+// Анимация ссылок
+.from( nav, {
+    y:'-100%',
+  rotateX: "-180",
+  duration: 0.75,
+    stagger: {
+      each: 0.01,
+    },
+    opacity: 0,
+    ease: 'Power3.easeOut'
+  }, "-=1.65")
+  .to( nav, {
+    y:0,
+    rotateX: 0,
+    stagger: {
+      each: 0.01,
+    },
+    opacity: 1,
+  })
+
+
+
+
+
+
+let checkbox = document.querySelector("#checkbox");
+
+checkbox.addEventListener( 'change', function() {
+  if(this.checked) {
+    document.querySelector(".aside").classList.toggle('aside_checked');
+  } else {
+      document.querySelector(".aside").classList.toggle('aside_checked');
+    }
+});
+
+
+
+
+
+
+/*---------------------ASIDE-------------------*/
+
+.aside {
+  position: fixed;
+  top: 0;
+  left: -110%;
+  width: 100vh;
+  height: 100vh;
+  transition: .85s cubic-bezier(.5,.1,0,.99);
+}
+
+
+.aside {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(4, minmax(55px, 1fr));
+  grid-template-areas:  '. title . .'
+                        '. mail . .'
+                        '. social chat .';
+}
+@media only screen and (min-width: 745px) {
+  .aside {
+    grid-template-columns: repeat(8, minmax(65px, 1fr));
+    grid-template-areas:
+                          '. . . . . . . . '
+                          '. title title mail social social chat chat';
+  }
+}
+@media only screen and (min-width: 1105px) {
+  .aside {
+    grid-template-columns: repeat(10, minmax(65px, 1fr));
+    grid-template-areas:
+                          '. . . . . . . . . .'
+                          '. title title mail social social chat chat . .';
+  }
+}
+.aside_style {
+  background-color: var(--grey90);
+  /*height: 100vh;*/
+  /*width: 100vw;*/
+/*   position: absolute; */
+/*   left: -400px; */
+
+}
+
+
+.aside-title {
+  grid-area: title;
+}
+.aside-title_style {
+  color: var(--grey45);
+}
+.aside-title_size {}
+.aside-title_position {
+  margin: 0;
+  height: 35px;
+}
+
+.aside-item {
+  height: 35px;
+}
+
+.aside-item__social {
+  grid-area: social;
+}
+.aside-item_style {
+  list-style-type: none;
+}
+.aside-item_size {}
+.aside-item_position {}
+
+
+.aside-item__chat {
+  grid-area: chat;
+  margin: 15px 0 0 0;
+}
+.aside-item__mail {
+  height: 50px;
+}
+
+#checkbox {
+/*   position: absolute; */
+  /*top: -200px;*/
+}
+
+
+.aside_checked {
+  left: 0px;
+  opacity: 1;
+  transition: .95s cubic-bezier(.5,.1,0,.99);
+}
+
+
+
+// Получил массив для заголовков
+let subtitle = gsap.utils.toArray(document.querySelectorAll('#subtitle .word > .char, whitespace')),
+
+// Получил массив для основного текста
+    paragraph = gsap.utils.toArray(document.querySelectorAll('#paragraph .word > .char')),
+
+// Получил массив для объектов
+    obj = gsap.utils.toArray(document.querySelectorAll('#obj')),
+    nav = gsap.utils.toArray(document.querySelectorAll('#nav .word > .char')),
+    title = gsap.utils.toArray(document.querySelectorAll('#title'));
+
+
+
+
+
