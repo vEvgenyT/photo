@@ -431,7 +431,7 @@ let subtitle = gsap.utils.toArray(document.querySelectorAll('#subtitle .word > .
 
 
 
-
+03 12 2020
 
 
 // ---------------------- SCROLL ANIMATION ---------------------- \\
@@ -544,3 +544,243 @@ let tl = gsap.timeline({
     opacity: 1,
   })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+evening
+
+
+
+<!--     <div class="preloader">
+      <div class="donut preloader__img_position"></div>
+    </div> -->
+
+<div class="preloader">
+  <div class="preloader__img_position">
+  <span class="preloader_title nav">Loading</span>
+  <span class="line line-1"></span>
+  <span class="line line-2"></span>
+  <span class="line line-3"></span>
+  <span class="line line-4"></span>
+  <span class="line line-5"></span>
+  </div>
+</div>
+
+
+
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #202020;
+  overflow: hidden;
+}
+
+.preloader__img_position {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+/* .donut {
+  width: 3em;
+  height: 3rem;
+  margin: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--grey50);
+  border-top-color: var(--grey20);
+  -webkit-animation: 1.05s spin infinite linear;
+          animation: 1.05s spin infinite linear;
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+} */
+
+
+
+.preloader_title {
+  color: var(--grey30);
+  margin: 0 2px 0 0;
+  text-align: center;
+}
+.preloader .line {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--grey30);
+  margin: 0 2px;
+  display: inline-block;
+  animation: opacity 1000ms infinite ease-in-out;
+}
+.preloader .line-1 { animation-delay: 100ms; }
+.preloader .line-2 { animation-delay: 500ms; }
+.preloader .line-3 { animation-delay: 1000ms; }
+.preloader .line-4 { animation-delay: 1500ms; }
+.preloader .line-5 { animation-delay: 2000ms; }
+@keyframes opacity { 
+  0% { 
+    opacity: 1;
+  }
+  50% { 
+    opacity: 0;
+  }
+  100% { 
+    opacity: 1;
+  }  
+}
+
+.preload_out {
+  transition: transform 2s cubic-bezier(.4,0,0,1);
+  transform: translateY(-200vh);
+}
+
+
+
+
+
+Splitting();
+
+  window.onload = function() {
+    let preload = document.querySelector('.preloader');
+
+    preload.classList.toggle("preload_out");
+    noise();
+
+
+
+// Получил массив для заголовков
+let subtitle = gsap.utils.toArray(document.querySelectorAll('#subtitle .word > .char, whitespace')),
+
+// Получил массив для основного текста
+    paragraph = gsap.utils.toArray(document.querySelectorAll('#paragraph .word > .char')),
+
+// Получил массив для объектов
+    obj = gsap.utils.toArray(document.querySelectorAll('#obj')),
+    nav = gsap.utils.toArray(document.querySelectorAll('#nav .word > .char')),
+    title = gsap.utils.toArray(document.querySelectorAll('#title'));
+
+
+
+// Переменные тайминга
+const timelineSettings = {
+    staggerValue: 0.01,
+    charsDuration: 0.5
+};
+
+let tl = gsap.timeline({
+    repeat: -1,
+    scrollTrigger: {
+      trigger: subtitle,
+      start: "top bottom",
+    }
+})
+
+// Анимация объектов
+.from( obj, {
+  y:"150%",
+  opacity: 0,
+  duration: 1.8,
+  stagger: {
+      each: .25,
+    },
+  ease: "elastic.out(1, .75)"
+}, "+=.75")
+.to ( obj , {
+  y: 0,
+  opacity: 1,
+})
+
+// Анимация заголовков
+.from( title, {
+  y:"50%",
+  opacity: 0,
+  scaleX: 1.8,
+  duration: 1.4,
+  ease: "back.out(0.75)"
+}, "-=1.55")
+.to ( title, {
+  y: 0,
+  opacity: 1,
+})
+
+
+// Анимация подзаголовков
+  .from( subtitle, {
+    y:'100%',
+    stagger: timelineSettings.staggerValue,
+    opacity: 0,
+    ease: 'Power3.easeOut'
+  }, "-=.8")
+  .to( subtitle, {
+    y:0,
+    stagger: timelineSettings.staggerValue,
+    opacity: 1,
+  })
+
+// Анимация основного текста
+.from( paragraph, {
+    y:'100%',
+      rotateX: -90,
+    stagger: {
+      each: 0.0035,
+    },
+    opacity: 0,
+    ease: 'Power3.easeOut'
+  }, "-=.45")
+  .to( paragraph, {
+    y:0,
+    opacity: 1,
+  })
+
+
+
+// Анимация ссылок
+.from( nav, {
+    y:'-100%',
+  rotateX: "-180",
+  duration: 0.75,
+    stagger: {
+      each: 0.01,
+    },
+    opacity: 0,
+    ease: 'Power3.easeOut'
+  }, "-=1.65")
+  .to( nav, {
+    y:0,
+    rotateX: 0,
+    stagger: {
+      each: 0.01,
+    },
+    opacity: 1,
+  })
+
+
+  }
