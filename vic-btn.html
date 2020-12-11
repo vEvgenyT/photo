@@ -331,3 +331,35 @@ const button = new ButtonCtrl(document.querySelector('.button'));
 
 
 https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.2.8/EventEmitter.min.js
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		gsap.registerEffect({
+  name: 'title',
+  effect: (targets, config) => {
+    return targets.forEach(targets => {
+      gsap.from(targets, {
+        y:"50%",
+        opacity: 0,
+        scaleX: 1.8,
+        duration: 1.4,
+        ease: "back.out(0.75)",
+        scrollTrigger: {
+          trigger: targets,
+          start: "top center",
+        }
+      })
+     })
+  },
+  extendTimeline: true,
+  defaults: {duration: 2},
+});
