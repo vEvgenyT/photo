@@ -846,3 +846,93 @@ var waves = new SineWaves({
 });
 
 // https://github.com/isuttell/sine-waves
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.onload = function() {
+
+    
+
+  preloaderOut();
+
+  document.querySelector('body').classList.toggle("preloader_srcoll-off");
+    
+  
+  GSDevTools.create();
+  
+  
+
+}
+
+const preloaderOut = function() {
+  let preload = document.querySelector('.preloader'),
+      preloaderOut = document.querySelector('.preloader__img');
+  
+
+  let timeline = gsap.timeline({})
+    .to(preloaderOut, {
+      opacity: 0,
+      duration: .5,
+      ease: "power4.inOut"
+    }, 0)
+  .to(preload, {
+      y: "-100%",
+      duration: 1.25,
+      ease: "power4.inOut"
+    }, "-=.35")
+}
+
+
+
+
+const preloaderIn = function() {
+  let preload = document.querySelector('.preloader'),
+      preloaderOut = document.querySelector('.preloader__img');
+  
+  document.querySelector('body').classList.toggle("preloader_srcoll-off");
+
+  let timeline = gsap.timeline({})
+  .fromTo(preload, {
+      y: "100%",
+      duration: 1.5,
+      ease: "power4.inOut"
+    },
+    {
+      y:"0%",
+    }, 0)
+    .to(preloaderOut, {
+      opacity: 1,
+      duration: .5,
+      ease: "power4.inOut"
+    },"-=.35")
+  
+}
+
+
+
+let btn  = document.querySelector('#btn');
+btn.addEventListener('click', function() {
+  preloaderIn();
+})
