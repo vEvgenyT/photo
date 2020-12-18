@@ -1209,5 +1209,51 @@ ScrollTrigger.refresh();
 
 
 
+document.querySelector('#in').addEventListener('click', () => {
+  preloaderIn();
+});
+
+document.querySelector('#out').addEventListener('click', () => {
+  preloaderOut();
+});
+
+document.querySelector('#en').addEventListener('click', () => {
+  preloaderOut();
+  let preload = document.querySelector('.preloader__img_position'),
+      preloadImg = document.querySelector('.preloader__img_size');
+      preloadImg.remove();
+      preload.insertAdjacentHTML('afterbegin', '<p>in English</p>');
+
+})
+
+
+const preloaderOut = () => {
+  let preload = document.querySelector('.preloader');
+  
+  const tl = gsap.timeline({})
+  .to(preload, {
+    opacity: 0,
+    y: "-150%",
+    duration: .75,
+    ease: 'power2.inOut'
+  })
+}
+
+
+const preloaderIn = () => {
+  let preload = document.querySelector('.preloader');
+  
+  const tl = gsap.timeline({})
+  .fromTo(preload, {
+    opacity: 0,
+    y: "150%",
+    ease: 'power2.inOut'
+  }, {
+    opacity: 1,
+    y: "0%",
+    duration: 1.15,
+    ease: 'power2.inOut'
+  })
+}
 
 
