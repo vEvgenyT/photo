@@ -90,9 +90,29 @@
    noise();
  })
 
+
+
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   lerp: .05
 });
+
+
+
+function startSound(event) {
+      if (!sound.isPlaying) {
+  sound.play();
+  waves.waves[0].amplitude = 22;
+}
+    target.removeEventListener("mouseover", startSound);
+};
+
+let target = document.querySelector("body");
+target.addEventListener("mouseover", startSound);
+
+
+
+
+
 
