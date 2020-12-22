@@ -117,3 +117,57 @@ target.addEventListener("DOMContentLoaded", startSound);
 
 
 
+
+
+
+.preload_out {
+  transform: translateY(-100vh);
+  transition: transform 2s cubic-bezier(.4,0,0,1);
+}
+function starterAnimation() {
+
+  Splitting();
+
+
+const tl = gsap.timeline()
+.add('start', .8)
+  .from(document.querySelector('[data-animation-canvas]'), {
+    y:"-30%",
+    opacity: 0,
+    duration: 1,
+    stagger: {
+      each: .05
+    }
+  }, "start")
+   .from(document.querySelector('[data-animation-start-header]'), {
+      y:"30%",
+      opacity: 0,
+      duration: .85,
+      stagger: {
+        each: .05
+      }
+    }, "start+=.75")
+    .from(document.querySelectorAll('[data-animation-start-subtitle] .char'), {
+      opacity: 0,
+      y: "80%",
+      duration: .65,
+      stagger: {
+        each: .0030
+      }
+    }, "start+=1.05")
+    .from(document.querySelectorAll('[data-animation-start-text] .char'), {
+      duration: .5,
+      y: "80%",
+      opacity: 0,
+      stagger: {
+        each: .0015
+     }
+  }, "start+=1.15")
+
+
+
+}
+
+
+
+
