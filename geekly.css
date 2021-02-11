@@ -1,0 +1,253 @@
+:root {
+  --main: #73F9BC;
+  --black: #171716;
+  --white: #FFFFFF;
+}
+
+
+
+/*! VICTORY | web design & development / hello@victory.net.ua */
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;0,900;1,700&display=swap" rel="stylesheet">
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Bison";
+  src: url("/fonts/woff2/Manrope-ExtraBold.woff2") format("woff2"),
+       url("/fonts/woff/Manrope-ExtraBold.woff") format("woff"),
+       url("/fonts/ttf/Manrope-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Jost', sans-serif;
+}
+
+
+
+.h1 {
+  font-family: Bison, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 100%;
+}
+@media only screen and (min-width: 1105px) {
+  .h1 {
+    font-size: 70px;
+  }
+}
+
+
+.h2 {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+}
+@media only screen and (min-width: 1105px) {
+  .h2 {
+    font-size: 120px;
+  }
+}
+
+
+.h3 {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 45px;
+}
+@media only screen and (min-width: 1105px) {
+  .h3 {
+    font-size: 80px;
+  }
+}
+
+.h4 {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 25px;
+}
+@media only screen and (min-width: 1105px) {
+  .h4 {
+    font-size: 35px;
+  }
+}
+
+.h5 {
+  font-family: Bison, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+}
+@media only screen and (min-width: 1105px) {
+  .h5 {
+    font-size: 65px;
+  }
+}
+
+.h6 {
+  font-family: Bison, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+}
+@media only screen and (min-width: 1105px) {
+  .h6 {
+    font-size: 50px;
+  }
+}
+
+.btn_big {
+  font-family: Bison, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+}
+
+.btn_small {
+  font-family: Bison, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 100%;
+}
+@media only screen and (min-width: 1105px) {
+  .btn_small {
+    font-size: 20px;
+  }
+}
+
+.p_j18b-j35b {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 120%;
+}
+@media only screen and (min-width: 1105px) {
+  .p_j18b-j35b {
+    font-size: 35px;
+  }
+}
+
+.p_b18b {
+  font-family: Bison, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.p_j14n-j20n {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+@media only screen and (min-width: 1105px) {
+  .p_j14n-j20n {
+    font-size: 20px;
+    line-height: 29px;
+  }
+}
+
+.p_j18bl-j22bl {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 26px;
+}
+@media only screen and (min-width: 1105px) {
+  .p_j18bl-j22bl {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+.p_j18m-j30m {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+}
+@media only screen and (min-width: 1105px) {
+  .p_j18m-j30m {
+    font-size: 30px;
+    line-height: 43px;
+  }
+}
+
+.p_j14b-j22b {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 120%;
+}
+@media only screen and (min-width: 1105px) {
+  .p_j14b-j22b {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+.p_j12b-j20b {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+}
+@media only screen and (min-width: 1105px) {
+  .p_j12b-j20b {
+    font-size: 20px;
+    line-height: 29px;
+  }
+}
+
+.p_b20b-b30b {
+  font-family: Bison, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+@media only screen and (min-width: 1105px) {
+  .p_j12b-j20b {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
+
+font-family: Jost;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 120%;
+
+.p_j14b-j25b {
+  font-family: Jost, -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 120%;
+}
+@media only screen and (min-width: 1105px) {
+  .p_j14b-j25b {
+    font-size: 25px;
+    line-height: 36px;
+  }
+}
