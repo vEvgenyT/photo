@@ -1,0 +1,193 @@
+<section class="grid">
+  <section class="news">
+    <h3 class="news__title">Новини</h3>
+    <a href="#" class="news__lnk">усі новини</a>
+    <div class="news-item">
+      <img src="#" alt="#" class="news-item__img">
+      <p class="news-item__date"><span>23 березня</span><span>12:03</span></p>
+      <h4 class="news-item__title">Шевченко: Немного удивился информации, что Степаненко может пропустить Евро</h4>
+      <p class="news-item__txt">Головний тренер збірної України Андрій Шевченко відвідав прес-конференцію напередодні матчу проти збірної Франції.</p>
+    </div>
+  </section>
+  
+  <aside class="documents">
+    <h3 class="documents__title">Документи</h3>
+    <a href="#" class="documents__lnk">усі документи</a>
+    <div class="accordion documents-item">
+      <input id="toggle1" type="radio" class="accordion-toggle" name="toggle" />
+      <label for="toggle1">Клуби УПЛ</label>
+      <section>
+       <p>Текст 1</p>
+      </section>
+    </div>
+  </aside>
+  
+</section>
+
+
+
+
+.grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(12, minmax(53px, 82px));
+  grid-template-areas: 'news news news news news news news news documents documents documents documents';
+}
+
+.news {
+  grid-area: news;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(8, minmax(53px, 82px));
+  grid-template-areas: 'title title . . . . link link'
+                        'item item item item item item item item';
+}
+
+.news__title {
+  grid-area: title;
+}
+
+.news__lnk {
+  grid-area: link;
+}
+
+.news-item {
+  grid-area: item;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(8, minmax(53px, 82px));
+  grid-template-areas: 'img img img date date . . .'
+                        'img img img title title title title title'
+                        'img img img txt txt txt txt txt';
+}
+.news-item__img {
+  grid-area: img;
+}
+.news-item__date {
+  grid-area: date;
+}
+.news-item__title {
+  grid-area: title;
+}
+.news-item__txt {
+  grid-area: txt;
+}
+
+
+
+.documents {
+  grid-area: documents;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, minmax(53px, 82px));
+  grid-template-areas: 'title title link link'
+                        'docitem docitem docitem docitem';
+}
+
+.documents__title {
+  grid-area: title;
+}
+
+.documents__lnk {
+  grid-area: link;
+}
+
+
+.documents-item {
+  grid-area: docitem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.accordion {
+  transform: translateZ(0);
+  background: white;
+  border-bottom: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+
+.accordion>.accordion-toggle {
+  display: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.accordion>label {
+  display: block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  background: #ecebec;
+  color: #555;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.accordion>label:after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid #555;
+  border-top: 2px solid #555;
+  transform: rotate(-135deg);
+  transition: 0.4s transform;
+}
+
+.accordion>section {
+  overflow: hidden;
+  height: 0;
+  transition: all .4s;
+}
+
+.accordion>.accordion-toggle:checked~label:after {
+  transform: rotate(45deg);
+  top: 16px;
+}
+
+.accordion>.accordion-toggle:checked~section {
+  height: 50px;
+}
+
+.accordion>section p {
+  margin: 15px 0;
+  padding: 0 20px;
+}
+
+
+
+
+
+
+
+
+
